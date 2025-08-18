@@ -36,11 +36,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   animate_do: ^3.0.2
   get: ^4.6.5
-  shared_preferences: ^2.2.2
   url_launcher: ^6.1.11
   google_fonts: ^4.0.4
   flutter_launcher_icons:
-  flutter_pdfview:
+  flutter_social_button: ^1.1.4+1
 
 flutter_launcher_icons:
   android: "launcher_icon"
@@ -71,6 +70,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
+    - assets/images/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
