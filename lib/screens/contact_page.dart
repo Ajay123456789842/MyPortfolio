@@ -23,31 +23,29 @@ class ContactPage extends StatelessWidget {
     final contact = portfolioData["contact"] as Map<String, dynamic>;
     return ScrollConfiguration(
       behavior: NoScrollbarBehavior(),
-      child: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Get in Touch',
-                style: GoogleFonts.poppins(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black87,
-                ),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              '#Contact & Connect',
+              style: GoogleFonts.poppins(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                color: Colors.black87,
               ),
-              const SizedBox(height: 8),
-              Text(
-                "I'm currently open to new opportunities. Let's connect!",
-                style: GoogleFonts.poppins(color: Colors.grey.shade600),
-              ),
-              const Divider(color: Color(0xFF1434A4), thickness: 2),
-              const SizedBox(height: 24),
-              _buildContactCard(context, contact),
-              const SizedBox(height: 24),
-            ],
-          ),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              "I'm currently open to new opportunities. And would love to hear about your projects!",
+              style: GoogleFonts.poppins(color: Colors.grey.shade600),
+            ),
+            const Divider(color: Color(0xFF1434A4), thickness: 2),
+            const SizedBox(height: 24),
+            _buildContactCard(context, contact),
+            const SizedBox(height: 24),
+          ],
         ),
       ),
     );
@@ -88,7 +86,7 @@ class ContactPage extends StatelessWidget {
             const Divider(),
             _buildContactItem(context,
                 icon: Icons.picture_as_pdf,
-                label: 'My Resume',
+                label: 'view Resume',
                 onTap: () => _launchURL("${contact["resume"]}")),
             const Divider(),
             Row(
@@ -127,17 +125,23 @@ class ContactPage extends StatelessWidget {
                   width: 48,
                   child: FittedBox(
                     fit: BoxFit.scaleDown,
-                    child: CircleAvatar(
-                      radius: 25,
-                      backgroundColor: Colors.black38,
-                      child: IconButton(
-                        icon: const Icon(
-                          FontAwesomeIcons.youtube,
-                          color: Colors.red,
-                        ),
-                        onPressed: () =>
-                            _launchURL(portfolioData["contact"]["youtube"]),
-                      ),
+                    child: FlutterSocialButton(
+                      iconColor: Colors.redAccent,
+                      mini: true,
+                      buttonType: ButtonType.email,
+                      onTap: () => _launchURL(
+                          'mailto:${portfolioData["contact"]["email"]}'),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 48,
+                  width: 48,
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: IconButton(
+                      icon: const Icon(Icons.download),
+                      onPressed: () => _launchURL('assets/resume.pdf'),
                     ),
                   ),
                 ),

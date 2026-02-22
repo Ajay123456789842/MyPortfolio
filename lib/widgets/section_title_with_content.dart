@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SectionTitleWithContent extends StatelessWidget {
-  final String title;
+  final String? title;
   final Widget child;
   final IconData? icon;
 
   const SectionTitleWithContent({
     super.key,
-    required this.title,
+    this.title,
     required this.child,
     this.icon,
   });
@@ -25,7 +25,7 @@ class SectionTitleWithContent extends StatelessWidget {
               const SizedBox(width: 8),
             ],
             Text(
-              title,
+              title!,
               style: GoogleFonts.poppins(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,

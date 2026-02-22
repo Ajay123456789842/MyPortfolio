@@ -1,31 +1,52 @@
 const Map<String, dynamic> portfolioData = {
-  "name": "Prakash Dodawad",
+  "name": "Naga Ajay Bathula",
   "tagline": "Building engaging, cross-platform apps with Flutter.",
   "professionalSummary":
-      "Experienced Flutter Developer with over a year of creating high-quality, cross-platform apps. Skilled at translating complex requirements into engaging user experiences and delivering reliable solutions in fast-paced environments. Committed to continuous learning and innovation. I have a strong foundation in Flutter development, including state management, API integration, and performance optimization. My experience spans the full app lifecycle, from initial design and development to deployment and maintenance.",
+      '''Experienced Flutter Developer with over 3 years of hands-on experience building high-performance, cross-platform mobile applications for Android and iOS. Skilled in Dart, Firebase, REST APIs, GraphQL, and modern state management solutions like BLoC, GetX, and Provider.
+
+I’m passionate about clean architecture, intuitive UI/UX, and writing maintainable, scalable code that delivers real business value. I thrive in collaborative, fast-paced teams and enjoy solving complex problems through innovation and attention to detail.
+
+Always eager to learn, adapt, and contribute to impactful projects that push the boundaries of mobile technology.''',
   "contact": {
-    "email": "prakashgdodawad@gmail.com",
-    "phone": "+916366133365",
+    "email": "nagaajaybathula@gmail.com",
+    "phone": "+919182179784",
     "resume":
-        "https://drive.google.com/file/d/10T55Kjx_zAFNTGepaP8DNX2Q9MtMWcEj/view?usp=sharing",
-    "linkedin": "https://www.linkedin.com/in/prakash-dodawad-a621571b8",
-    "github": "https://github.com/PrakashDodawad2024",
-    "youtube": "https://www.youtube.com/@FlutterbyPrakash",
-    "location": "Bangalore, Karnataka, Pin code 560097",
-    "dob": "23rd May 2000"
+        "https://drive.google.com/file/d/1nOAbzxRMIXV6I3sSxsfMI_ef6bBC2CVO/view?usp=drive_link",
+    "linkedin": "https://www.linkedin.com/in/nagaajay/",
+    "github": "https://github.com/Ajay123456789842",
+    "youtube": "",
+    "location": "Gudivada, Andhra Pradesh, Pin code 521329",
+    "dob": "27th September 1997"
   },
   "skills": {
-    "languages": ["Flutter", "Dart", "Core Java"],
-    "databases": ["Hive Database", "MySQL"],
-    "api": ["Rest", "GraphQL", "MQTT"],
-    "stateManagement": ["GetX", "Provider", "BLOC", "MVC", "MVVM"],
+    "languages": ["Flutter", "Dart", "Node js"],
+    "databases": ["Hive Database", "SqFlite", 'Firebase', 'oracle PL/SQL'],
+    "api": ["Rest", "GraphQL"],
+    "stateManagement": [
+      "Provider",
+      'Riverpod' "BLOC",
+      "MVC",
+      "MVVM",
+      'Clean Architecture'
+    ],
     "tools": ["Visual Studio Code", "Android Studio", "Xcode", "GitHub"]
   },
   "workExperience": [
     {
-      "company": "Mobil80 Solution and Services Pvt Limited",
+      "company": "TATA CONSULTANCY SERVICES",
       "role": "Software Engineer (Flutter Developer)",
-      "duration": "02nd November 2022 – Present",
+      "duration": "6th May 2021 – 15th May 2025",
+      "responsibilities": [
+        "Developed and implemented user-friendly mobile applications using Flutter.",
+        "Collaborated with senior developers and designers to integrate UI/UX designs and third-party libraries.",
+        "Integrated APIs and services, conducted unit tests, and fixed bugs to ensure app stability and performance.",
+        "Researched and added new features and functionalities to enhance Flutter applications."
+      ]
+    },
+    {
+      "company": "PRIMUS GLOBAL(contractor)",
+      "role": "Flutter Developer",
+      "duration": "4th September – 5th December 2025",
       "responsibilities": [
         "Developed and implemented user-friendly mobile applications using Flutter.",
         "Collaborated with senior developers and designers to integrate UI/UX designs and third-party libraries.",
@@ -36,139 +57,66 @@ const Map<String, dynamic> portfolioData = {
   ],
   "projects": [
     {
-      "name": "ServiceWRK Technician",
-      "description":
-          "A mobile app to manage service tickets and increase productivity.",
-      "imageUrl": "assets/images/servicewrk.png",
+      "name": "SBI YONO 2.0",
+      "description": "Need to Revamp some of the screens to Flutter",
+      "imageUrl": "assets/images/yono.png",
       "details": [
-        "Utilized Firebase Auth for secure user authentication and login.",
-        "Integrated Google Maps to provide location services and track technicians.",
-        "Managed data efficiently with GraphQL API and Hive for local storage.",
-        "Implemented GetX for robust state management.",
-        "Incorporated Shake Detector and Screenshot features for enhanced interactivity."
+        "Used models according to Figma to structure the data.",
+        "Mainly focused on the security of the application by using standard encryption and token techniques.",
+        "Used databases like SQLite, Oracle DB, Firebase, Hive to store and retrieve the data.",
+        "Used standard state management techniques like Provider and Bloc to increase the efficiency of the app.",
+        "Maintained clean code throughout the application.",
+        "Actively participated in regular status meetings."
       ],
-      "links": [
-        {
-          "type": "Play Store",
-          "url":
-              "https://play.google.com/store/apps/details?id=com.mobil80.servicewrk"
-        },
-        {
-          "type": "App Store",
-          "url": "https://apps.apple.com/in/app/servicewrk/id1609190294"
-        }
-      ]
     },
     {
-      "name": "ServiceWRK Agent",
+      "name": "Godavari Cuts",
       "description":
-          "A back-end service agent app for creating, assigning, and monitoring tickets from anywhere.",
-      "imageUrl": "assets/images/servicewrkagent.png",
+          "This Project mainly focuses on displaying good quality raw material food items like Fish, Prawns, Seafood,countrychicken and mutton. Also to sell them and ship to the customers by validating their respective Zip code.",
+      "imageUrl": "assets/images/godavari_cuts.png",
       "details": [
-        "Enabled agents to create, assign, and manage service tickets on the go.",
-        "Provided real-time monitoring of ticket status and technician locations.",
-        "Integrated Google Maps to provide location services and track agent.",
-        "Managed data efficiently with GraphQL API and Hive for local storage.",
-        "Implemented GetX for robust state management.",
+        "Used design packages like Google Fonts, and other Flutter packages to provide a visually appealing user interface.",
+        "Used databases like SQLite, Firebase, and Shared Preferences to manage application data.",
+        "Used HTTP and Dio packages for networking.",
+        "Implemented standard state management techniques like Provider and Bloc to maintain global state.",
+        "Implemented wishlist, cart, and search engine functionalities to enhance user experience.",
+        "Implemented push notifications using Cloud Functions to send updates about latest offers and store notifications.",
+        "Followed Agile methodology during application development."
       ],
-      "links": [
-        {
-          "type": "Play Store",
-          "url":
-              "https://play.google.com/store/apps/details?id=com.mobil80.servicewrkagent"
-        },
-        {
-          "type": "App Store",
-          "url": "https://apps.apple.com/in/app/servicewrk-agent/id1612823765"
-        }
-      ]
     },
     {
-      "name": "PharmaWRK",
+      "name": "CBD(revamp)",
       "description":
-          "An easy tool to assist Medical Representatives in the field.",
-      "imageUrl": "assets/images/pharmawrk.png",
+          "This project mainly focuses on modifying the existing UI and some of the functionality of commercial Bank of Dubai.",
+      "imageUrl": "assets/images/cbd.png",
       "details": [
-        "Features Firebase Auth and Google Maps for user authentication and location services.",
-        "Uses GraphQL API and Hive database for efficient and offline-friendly data handling.",
-        "Leveraged the GetX state management package for a responsive and scalable architecture.",
-        "Enabled uploading and fetching files from AWS S3, along with handling dynamic form fields.",
-        "Implemented Hive for submitting offline visit logs reliably.",
-        "Designed to be fully responsive across both mobile devices and iPads.",
+        "Developed the UI according to the given Figma requirements.",
+        "Implemented multilingual support for both Arabic and English.",
+        "Used Bloc for state management following Clean Architecture principles.",
+        "Regularly participated in client meetings to provide updates based on Figma designs.",
+        "Closely collaborated with SIT and UAT teams for bug resolution."
       ],
-      "links": [
-        {
-          "type": "Play Store",
-          "url":
-              "https://play.google.com/store/apps/details?id=com.mobil80.pharmawrk"
-        },
-        {
-          "type": "App Store",
-          "url": "https://apps.apple.com/in/app/pharmawrk/id1575723537"
-        }
-      ]
     },
     {
-      "name": "Dyrectori",
+      "name": "Veedle (Vodafone end to end data linking engine)",
       "description":
-          "Organize & share contact books, directories, and lists with others or use solo.",
-      "imageUrl": "assets/images/dyrectori.png",
+          "This project seeks to use current fixed enterprise provisioning, billing and inventory systems to provide acomprehensive view of all fixed enterprise data.",
+      "imageUrl": "assets/images/vodafone.png",
       "details": [
-        "Created dynamic directories with customizable fields for flexible data input",
-        "Displayed text fields dynamically while adding entries based on directory structure",
-        "Integrated amplify_storage_s3 to upload and manage files on AWS S3",
-        "Displayed user and directory locations using google_maps_flutter",
-        "Fetched directory lists from AWS S3 using aws_client for real-time access",
-        "Used hive_flutter to store and display directories for offline access",
-        "Implemented razorpay_flutter on Android and RevenueCat on iOS for directory upgrades",
+        "Worked on creating stored procedures using Oracle PL/SQL according to the design specifications.",
+        "Created database objects using data warehousing methodologies.",
+        "Implemented scripts for testing automation.",
+        "Worked with implementation packages for deploying changes in SIT and Production environments.",
+        "Prepared test case artifacts for testing and internal reviews.",
+        "Followed Agile methodology and uploaded code to GitHub after every sprint using Git commands."
       ],
-      "links": [
-        {
-          "type": "Play Store",
-          "url":
-              "https://play.google.com/store/apps/details?id=com.mobil80.dyrectori&pcampaignid=web_share"
-        },
-        {
-          "type": "App Store",
-          "url":
-              "https://apps.apple.com/in/app/dyrectori-shared-entry-books/id6742438975"
-        }
-      ]
     },
-    {
-      "name": "Radio.ONE",
-      "description":
-          "Enjoy a world of music at your fingertips with Radio.ONE app!.",
-      "imageUrl": "assets/images/radioone.png",
-      "details": [
-        "Tune in to your favorite stations across genres - relax, dance, or explore new sounds",
-        "Set your favorite stations for instant access anytime",
-        "Used radio_player package to stream live radio stations seamlessly",
-        "Implemented MQTT protocol to list and update all available radio stations in real time",
-        "Utilized Hive database to store radio station data for offline access and fast loading",
-      ],
-      "links": [
-        {"type": "Play Store", "url": ""},
-        {"type": "App Store", "url": ""}
-      ]
-    }
   ],
   "education": [
     {
-      "school":
-          "KLS’s Vishwanathrao Deshpande Institute of Technology, Haliyal",
-      "degree": "B. E in Civil Engineering",
-      "duration": "2017-2021",
+      "school": "Bapatla Engineering College,Bapatla",
+      "degree": "B.Tech in Computer Science",
+      "duration": "2016-2020",
     },
-    {
-      "school": "Madeena Pre-University College, Dharwad",
-      "degree": "Pre-University Course",
-      "duration": "2016-2017",
-    },
-    {
-      "school": "Basel Mission Boys High School, Dharwad",
-      "degree": "Secondary School Leaving Certificate",
-      "duration": "2014-2015",
-    }
   ]
 };

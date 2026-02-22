@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 import 'package:my_portfolio/app.dart';
 import 'screens/main_screen.dart';
+import 'package:device_preview/device_preview.dart';
 
 void main() {
-  runApp(const PortfolioApp());
+  runApp(DevicePreview(builder: (context) => const PortfolioApp()));
 }
 
 // import 'package:flutter/material.dart';

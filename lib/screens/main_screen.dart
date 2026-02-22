@@ -13,26 +13,54 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  final ScrollController _scrollController = ScrollController();
+
+  final homeKey = GlobalKey();
+  final aboutKey = GlobalKey();
+  final projectsKey = GlobalKey();
+  final contactKey = GlobalKey();
+
   int _selectedIndex = 0;
 
-  final List<Widget> _pages = const [
-    HomePage(),
-    AboutPage(),
-    ProjectsPage(),
-    ContactPage(),
-  ];
-
   final List<String> _pageTitles = const [
-    'Home',
     'About',
+    'Skills&work exp',
     'Projects',
     'Contact',
   ];
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+  @override
+  void initState() {
+    super.initState();
+    _scrollController.addListener(_onScroll);
+  }
+
+  void _onScroll() {
+    double offset = _scrollController.offset;
+
+    double homeHeight = homeKey.currentContext?.size?.height ?? 0;
+    double aboutHeight = aboutKey.currentContext?.size?.height ?? 0;
+    double projectsHeight = projectsKey.currentContext?.size?.height ?? 0;
+
+    if (offset < homeHeight - 100) {
+      setState(() => _selectedIndex = 0);
+    } else if (offset < homeHeight + aboutHeight - 100) {
+      setState(() => _selectedIndex = 1);
+    } else if (offset < homeHeight + aboutHeight + projectsHeight - 100) {
+      setState(() => _selectedIndex = 2);
+    } else {
+      setState(() => _selectedIndex = 3);
+    }
+  }
+
+  void scrollToSection(GlobalKey key, int index) {
+    setState(() => _selectedIndex = index);
+
+    Scrollable.ensureVisible(
+      key.currentContext!,
+      duration: const Duration(milliseconds: 800),
+      curve: Curves.easeInOut,
+    );
   }
 
   @override
@@ -50,13 +78,13 @@ class _MainScreenState extends State<MainScreen> {
             ),
             children: [
               TextSpan(
-                text: 'Prakash',
+                text: 'Naga Ajay',
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.primary,
                 ),
               ),
               const TextSpan(
-                text: ' Dodawad',
+                text: ' Bathula',
                 style: TextStyle(
                   color: Colors.black87,
                 ),
@@ -73,19 +101,30 @@ class _MainScreenState extends State<MainScreen> {
                   (index) => Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: TextButton(
-                      onPressed: () => _onItemTapped(index),
-                      child: Text(
-                        _pageTitles[index],
-                        style: GoogleFonts.poppins(
-                          fontSize: 16,
-                          color: _selectedIndex == index
-                              ? Theme.of(context).colorScheme.primary
-                              : Colors.black54,
-                          fontWeight: _selectedIndex == index
-                              ? FontWeight.bold
-                              : FontWeight.normal,
+                      onPressed: () {
+                        if (index == 0) scrollToSection(homeKey, 0);
+                        if (index == 1) scrollToSection(aboutKey, 1);
+                        if (index == 2) scrollToSection(projectsKey, 2);
+                        if (index == 3) scrollToSection(contactKey, 3);
+                      },
+                      child: Wrap(spacing: 4, runSpacing: 8, children: [
+                        Chip(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16)),
+                          label: Text(
+                            _pageTitles[index],
+                            style: GoogleFonts.poppins(
+                              fontSize: 16,
+                              color: _selectedIndex == index
+                                  ? Theme.of(context).colorScheme.primary
+                                  : Colors.black54,
+                              fontWeight: _selectedIndex == index
+                                  ? FontWeight.bold
+                                  : FontWeight.normal,
+                            ),
+                          ),
                         ),
-                      ),
+                      ]),
                     ),
                   ),
                 ),
@@ -97,26 +136,41 @@ class _MainScreenState extends State<MainScreen> {
           constraints: BoxConstraints(
             maxWidth: isMobile ? double.infinity : 900,
           ),
-          child: _pages[_selectedIndex],
+          child: SingleChildScrollView(
+            controller: _scrollController,
+            child: Column(
+              children: [
+                Container(key: homeKey, child: const HomePage()),
+                Container(key: aboutKey, child: const AboutPage()),
+                Container(key: projectsKey, child: const ProjectsPage()),
+                Container(key: contactKey, child: const ContactPage()),
+              ],
+            ),
+          ),
         ),
       ),
       bottomNavigationBar: isMobile
           ? NavigationBar(
               selectedIndex: _selectedIndex,
-              onDestinationSelected: _onItemTapped,
+              onDestinationSelected: (index) {
+                if (index == 0) scrollToSection(homeKey, 0);
+                if (index == 1) scrollToSection(aboutKey, 1);
+                if (index == 2) scrollToSection(projectsKey, 2);
+                if (index == 3) scrollToSection(contactKey, 3);
+              },
               height: 70,
               backgroundColor: Colors.white,
               labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
               destinations: const [
                 NavigationDestination(
-                  icon: Icon(Icons.home_outlined),
-                  selectedIcon: Icon(Icons.home),
-                  label: 'Home',
-                ),
-                NavigationDestination(
                   icon: Icon(Icons.person_outline),
                   selectedIcon: Icon(Icons.person),
                   label: 'About',
+                ),
+                NavigationDestination(
+                  icon: Icon(Icons.work_outline),
+                  selectedIcon: Icon(Icons.work),
+                  label: 'Skills&work exp',
                 ),
                 NavigationDestination(
                   icon: Icon(Icons.folder_open),

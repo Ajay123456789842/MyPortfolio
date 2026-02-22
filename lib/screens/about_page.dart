@@ -15,29 +15,20 @@ class AboutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScrollConfiguration(
       behavior: NoScrollbarBehavior(),
-      child: ListView(
-        padding: const EdgeInsets.all(16.0),
+      child: Column(
+        // padding: const EdgeInsets.all(16.0),
         children: [
-          Text(
-            'About Me',
-            style: GoogleFonts.poppins(
-              fontSize: 28,
-              fontWeight: FontWeight.bold,
-              color: Colors.black87,
-            ),
+          const SectionTitleWithContent(
+            title: '# Professional Background',
+            child: Divider(color: Color(0xFF1434A4), thickness: 2),
           ),
-          const Divider(color: Color(0xFF1434A4), thickness: 2),
-          const SizedBox(height: 16),
-          SectionTitleWithContent(
-            title: 'Professional Summary',
-            child: Text(
-              portfolioData["professionalSummary"]!,
-              style: GoogleFonts.poppins(color: Colors.grey.shade600),
-            ),
+          Text(
+            portfolioData["professionalSummary"]!,
+            style: GoogleFonts.poppins(color: Colors.grey.shade600),
           ),
           const SizedBox(height: 24),
           SectionTitleWithContent(
-            title: 'Technical Skills',
+            title: 'Skills & Technologies',
             icon: Icons.code,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

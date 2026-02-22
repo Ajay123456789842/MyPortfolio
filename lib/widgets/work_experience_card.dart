@@ -19,8 +19,8 @@ Widget buildExperienceCard(BuildContext context, Map<String, dynamic> exp) {
           Text(
             exp["company"],
             style: GoogleFonts.poppins(
-              fontSize: 16,
-              color: Colors.grey.shade600,
+              fontSize: 18,
+              color: Colors.black,
             ),
           ),
           const SizedBox(height: 8),

@@ -9,7 +9,7 @@ class PortfolioApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Prakash Dodawad',
+      title: 'Ajay Bathula',
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: AppBarTheme(
@@ -33,7 +33,7 @@ class PortfolioApp extends StatelessWidget {
           headlineLarge: GoogleFonts.poppins(
               color: Colors.black87, fontWeight: FontWeight.bold),
         ),
-        cardTheme: CardTheme(
+        cardTheme: CardThemeData(
           color: Colors.grey.shade50,
           elevation: 2,
           shape: RoundedRectangleBorder(

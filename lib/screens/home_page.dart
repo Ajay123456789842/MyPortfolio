@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
   _launchURL(String url) async {
     final Uri uri = Uri.parse(url);
     if (await canLaunchUrl(uri)) {
-      await launchUrl(uri);
+      await launchUrl(uri, mode: LaunchMode.platformDefault);
     } else {
       throw 'Could not launch $uri';
     }
@@ -23,117 +23,66 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScrollConfiguration(
       behavior: NoScrollbarBehavior(),
-      child: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                width: 200,
-                height: 200,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: Theme.of(context).colorScheme.primary,
-                    width: 4,
-                  ),
-                ),
-                child: ClipOval(
-                  child: FittedBox(
-                    fit: BoxFit.contain,
-                    child: SizedBox(
-                      width: 200,
-                      height: 200,
-                      child: Image.asset(
-                        "assets/profile.png",
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: Text.rich(
+                TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "Hello,My name is\n",
+                      style: GoogleFonts.poppins(
+                        fontSize: 18,
+                        color: Colors.black,
                       ),
                     ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 32),
-              Text(
-                'Hello, I\'m Prakash',
-                style: GoogleFonts.poppins(
-                  fontSize: 36,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black87,
+                    TextSpan(
+                      text: "Ajay Bathula\n\n",
+                      style: GoogleFonts.poppins(
+                        fontSize: 30,
+                        color: Colors.black,
+                      ),
+                    ),
+                    TextSpan(
+                      text: '${portfolioData['tagline']}\n\n',
+                      style: GoogleFonts.poppins(
+                        fontSize: 30,
+                        color: Colors.grey.shade600,
+                      ),
+                    ),
+                  ],
                 ),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 8),
-              Text(
-                portfolioData["tagline"]!,
-                style: GoogleFonts.poppins(
-                  fontSize: 18,
-                  color: Colors.grey.shade600,
-                ),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 48),
-              SectionTitleWithContent(
-                title: 'Professional Summary',
-                child: Text(
-                  portfolioData["professionalSummary"]!,
-                  style: GoogleFonts.poppins(color: Colors.grey.shade600),
+            ),
+            const Spacer(),
+            Container(
+              width: 300,
+              height: 300,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: Theme.of(context).colorScheme.primary,
+                  width: 4,
                 ),
               ),
-              const SizedBox(height: 32),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    height: 48,
-                    width: 48,
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: FlutterSocialButton(
-                        mini: true,
-                        buttonType: ButtonType.linkedin,
-                        onTap: () =>
-                            _launchURL(portfolioData["contact"]["linkedin"]),
-                      ),
+              child: ClipOval(
+                child: FittedBox(
+                  fit: BoxFit.contain,
+                  child: SizedBox(
+                    width: 100,
+                    height: 100,
+                    child: Image.asset(
+                      "assets/images/profile.png",
                     ),
                   ),
-                  const SizedBox(width: 18),
-                  SizedBox(
-                    height: 48,
-                    width: 48,
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: FlutterSocialButton(
-                        mini: true,
-                        buttonType: ButtonType.github,
-                        onTap: () =>
-                            _launchURL(portfolioData["contact"]["github"]),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 18),
-                  SizedBox(
-                    height: 48,
-                    width: 48,
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: CircleAvatar(
-                        radius: 25,
-                        backgroundColor: Colors.black38,
-                        child: IconButton(
-                          icon: const Icon(
-                            FontAwesomeIcons.youtube,
-                            color: Colors.red,
-                          ),
-                          onPressed: () =>
-                              _launchURL(portfolioData["contact"]["youtube"]),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              )
-            ],
-          ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
