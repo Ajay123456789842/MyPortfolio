@@ -44,26 +44,26 @@ class HomePage extends StatelessWidget {
                           TextSpan(
                             text: "Ajay Bathula\n\n",
                             style: GoogleFonts.poppins(
-                              fontSize: 30,
+                              fontSize: 38,
                               color: Colors.white,
                             ),
                           ),
                           TextSpan(
-                            text: '${portfolioData['tagline']}\n\n',
+                            text: '${portfolioData['tagline']}',
                             style: GoogleFonts.poppins(
-                              fontSize: 30,
+                              fontSize: 28,
                               color: Colors.white,
                             ),
                           ),
                         ],
                       ),
-                      textAlign: TextAlign.center,
+                      textAlign: TextAlign.justify,
                     ),
                   ),
                   const Spacer(),
                   Container(
-                    width: 280,
-                    height: 280,
+                    width: 320,
+                    height: 320,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       border: Border.all(

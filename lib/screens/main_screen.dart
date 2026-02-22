@@ -144,11 +144,18 @@ class _MainScreenState extends State<MainScreen> {
           child: SingleChildScrollView(
             controller: _scrollController,
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Container(key: homeKey, child: const HomePage()),
                 Container(key: aboutKey, child: const AboutPage()),
                 Container(key: projectsKey, child: const ProjectsPage()),
                 Container(key: contactKey, child: const ContactPage()),
+                const Padding(
+                  padding: EdgeInsets.only(bottom: 24),
+                  child: Center(
+                    child: Text('Designed and Built with flutter ❤️'),
+                  ),
+                ),
               ],
             ),
           ),
