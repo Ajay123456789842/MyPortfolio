@@ -16,7 +16,7 @@ Widget buildEducationCard(BuildContext context, Map<String, dynamic> edu) {
               style: GoogleFonts.poppins(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: Colors.black87,
+                color: const Color.fromRGBO(100, 255, 218, 1),
               ),
             ),
             Text(

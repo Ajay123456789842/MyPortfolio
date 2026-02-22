@@ -13,14 +13,14 @@ Widget buildExperienceCard(BuildContext context, Map<String, dynamic> exp) {
             style: GoogleFonts.poppins(
               fontSize: 20,
               fontWeight: FontWeight.bold,
-              color: Colors.black87,
+              color: const Color.fromRGBO(100, 255, 218, 1),
             ),
           ),
           Text(
             exp["company"],
             style: GoogleFonts.poppins(
               fontSize: 18,
-              color: Colors.black,
+              color: const Color.fromRGBO(100, 255, 218, 1),
             ),
           ),
           const SizedBox(height: 8),
@@ -39,13 +39,16 @@ Widget buildExperienceCard(BuildContext context, Map<String, dynamic> exp) {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Icon(Icons.check_circle_outline,
-                      size: 16, color: Theme.of(context).colorScheme.primary),
+                  const Icon(
+                    Icons.check_circle_outline,
+                    size: 16,
+                    color: Color.fromRGBO(100, 255, 218, 1),
+                  ),
                   const SizedBox(width: 8),
                   Expanded(
                     child: Text(
                       res,
-                      style: GoogleFonts.poppins(color: Colors.black87),
+                      style: GoogleFonts.poppins(color: Colors.white),
                     ),
                   ),
                 ],

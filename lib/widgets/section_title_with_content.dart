@@ -21,7 +21,7 @@ class SectionTitleWithContent extends StatelessWidget {
         Row(
           children: [
             if (icon != null) ...[
-              Icon(icon, color: Theme.of(context).colorScheme.primary),
+              Icon(icon, color: const Color.fromRGBO(100, 255, 218, 1)),
               const SizedBox(width: 8),
             ],
             Text(
@@ -29,7 +29,7 @@ class SectionTitleWithContent extends StatelessWidget {
               style: GoogleFonts.poppins(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: Colors.black87,
+                color: const Color.fromRGBO(100, 255, 218, 1),
               ),
             ),
           ],

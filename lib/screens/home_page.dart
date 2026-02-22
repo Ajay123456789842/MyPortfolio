@@ -21,69 +21,117 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDesktop = MediaQuery.of(context).size.width > 800;
     return ScrollConfiguration(
       behavior: NoScrollbarBehavior(),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              child: Text.rich(
-                TextSpan(
+        child: isDesktop
+            ? Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: Text.rich(
+                      TextSpan(
+                        children: [
+                          TextSpan(
+                            text: "Hello,My name is\n",
+                            style: GoogleFonts.poppins(
+                              fontSize: 18,
+                              color: Colors.white,
+                            ),
+                          ),
+                          TextSpan(
+                            text: "Ajay Bathula\n\n",
+                            style: GoogleFonts.poppins(
+                              fontSize: 30,
+                              color: Colors.white,
+                            ),
+                          ),
+                          TextSpan(
+                            text: '${portfolioData['tagline']}\n\n',
+                            style: GoogleFonts.poppins(
+                              fontSize: 30,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  const Spacer(),
+                  Container(
+                    width: 280,
+                    height: 280,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: const Color.fromRGBO(100, 255, 218, 1),
+                        width: 3,
+                      ),
+                    ),
+                    child: ClipOval(
+                      child: FittedBox(
+                        fit: BoxFit.contain,
+                        child: SizedBox(
+                          width: 100,
+                          height: 100,
+                          child: Image.asset("assets/images/profile.png"),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            : Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    TextSpan(
-                      text: "Hello,My name is\n",
+                    Container(
+                      width: 200,
+                      height: 200,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: const Color.fromRGBO(100, 255, 218, 1),
+                          width: 3,
+                        ),
+                      ),
+                      child: ClipOval(
+                        child: FittedBox(
+                          fit: BoxFit.contain,
+                          child: SizedBox(
+                            width: 200,
+                            height: 200,
+                            child: Image.asset("assets/images/profile.png"),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 32),
+                    Text(
+                      'Hello, I\'m Ajay',
+                      style: GoogleFonts.poppins(
+                        fontSize: 36,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      portfolioData["tagline"]!,
                       style: GoogleFonts.poppins(
                         fontSize: 18,
-                        color: Colors.black,
+                        color: Colors.white,
                       ),
-                    ),
-                    TextSpan(
-                      text: "Ajay Bathula\n\n",
-                      style: GoogleFonts.poppins(
-                        fontSize: 30,
-                        color: Colors.black,
-                      ),
-                    ),
-                    TextSpan(
-                      text: '${portfolioData['tagline']}\n\n',
-                      style: GoogleFonts.poppins(
-                        fontSize: 30,
-                        color: Colors.grey.shade600,
-                      ),
+                      textAlign: TextAlign.center,
                     ),
                   ],
                 ),
-                textAlign: TextAlign.center,
               ),
-            ),
-            const Spacer(),
-            Container(
-              width: 300,
-              height: 300,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(
-                  color: Theme.of(context).colorScheme.primary,
-                  width: 4,
-                ),
-              ),
-              child: ClipOval(
-                child: FittedBox(
-                  fit: BoxFit.contain,
-                  child: SizedBox(
-                    width: 100,
-                    height: 100,
-                    child: Image.asset(
-                      "assets/images/profile.png",
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }

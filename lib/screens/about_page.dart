@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_portfolio/widgets/certifications_card.dart';
 import 'package:my_portfolio/widgets/skills_widget.dart';
 
 import '../data/portfolio_data.dart';
@@ -18,15 +19,24 @@ class AboutPage extends StatelessWidget {
       child: Column(
         // padding: const EdgeInsets.all(16.0),
         children: [
-          const SectionTitleWithContent(
+          SectionTitleWithContent(
             title: '# Professional Background',
-            child: Divider(color: Color(0xFF1434A4), thickness: 2),
+            child: Divider(color: Colors.grey.shade600, thickness: 1),
           ),
-          Text(
-            portfolioData["professionalSummary"]!,
-            style: GoogleFonts.poppins(color: Colors.grey.shade600),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              portfolioData["professionalSummary"]!,
+              textAlign: TextAlign.start,
+
+              style: GoogleFonts.poppins(
+                color: Colors.white,
+                fontSize: 16,
+                //height: 1.6,
+              ),
+            ),
           ),
-          const SizedBox(height: 24),
+
           SectionTitleWithContent(
             title: 'Skills & Technologies',
             icon: Icons.code,
@@ -34,15 +44,30 @@ class AboutPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 buildSkillCategory(
-                    "Languages", portfolioData["skills"]["languages"], context),
+                  "Languages",
+                  portfolioData["skills"]["languages"],
+                  context,
+                ),
                 buildSkillCategory(
-                    "Databases", portfolioData["skills"]["databases"], context),
+                  "Databases",
+                  portfolioData["skills"]["databases"],
+                  context,
+                ),
                 buildSkillCategory(
-                    "API Integration", portfolioData["skills"]["api"], context),
-                buildSkillCategory("State Management",
-                    portfolioData["skills"]["stateManagement"], context),
+                  "API Integration",
+                  portfolioData["skills"]["api"],
+                  context,
+                ),
                 buildSkillCategory(
-                    "Tools", portfolioData["skills"]["tools"], context),
+                  "State Management",
+                  portfolioData["skills"]["stateManagement"],
+                  context,
+                ),
+                buildSkillCategory(
+                  "Tools",
+                  portfolioData["skills"]["tools"],
+                  context,
+                ),
               ],
             ),
           ),
@@ -58,6 +83,18 @@ class AboutPage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 24),
+          SectionTitleWithContent(
+            title: 'Certifications',
+            icon: Icons.bookmark,
+            child: Column(
+              children: [
+                buildCertificationsCard(
+                  context,
+                  portfolioData["certifications"],
+                ),
+              ],
+            ),
+          ),
           SectionTitleWithContent(
             title: 'Education',
             icon: Icons.school,

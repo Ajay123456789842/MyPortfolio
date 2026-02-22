@@ -8,19 +8,8 @@ import '../widgets/no_scrollbar_behavior.dart';
 class ProjectsPage extends StatelessWidget {
   const ProjectsPage({super.key});
 
-  Future<void> _launchURL(String url) async {
-    final Uri uri = Uri.parse(url);
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri);
-    } else {
-      throw 'Could not launch $uri';
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
-    final bool isDesktop = MediaQuery.of(context).size.width > 800;
-
     return ScrollConfiguration(
       behavior: NoScrollbarBehavior(),
       child: Padding(
@@ -33,10 +22,10 @@ class ProjectsPage extends StatelessWidget {
               style: GoogleFonts.poppins(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
-                color: Colors.black87,
+                color: const Color.fromRGBO(100, 255, 218, 1),
               ),
             ),
-            const Divider(color: Color(0xFF1434A4), thickness: 2),
+            Divider(color: Colors.grey.shade600, thickness: 1),
             const SizedBox(height: 24),
             GridView.builder(
               shrinkWrap: true,
@@ -61,9 +50,7 @@ class ProjectsPage extends StatelessWidget {
   Widget _buildProjectCard(BuildContext context, Map<String, dynamic> project) {
     return Card(
       elevation: 4,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -87,7 +74,7 @@ class ProjectsPage extends StatelessWidget {
               style: GoogleFonts.poppins(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: Colors.black87,
+                color: const Color.fromRGBO(100, 255, 218, 1),
               ),
             ),
             const SizedBox(height: 8),
@@ -100,7 +87,7 @@ class ProjectsPage extends StatelessWidget {
                       style: GoogleFonts.poppins(
                         fontSize: 14,
                         height: 1.5,
-                        color: Colors.grey.shade700,
+                        color: Colors.white,
                       ),
                     ),
                     const SizedBox(height: 12),
@@ -111,10 +98,10 @@ class ProjectsPage extends StatelessWidget {
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.circle,
                                 size: 8,
-                                color: Theme.of(context).colorScheme.primary,
+                                color: Color.fromRGBO(100, 255, 218, 1),
                               ),
                               const SizedBox(width: 8),
                               Expanded(
@@ -122,7 +109,7 @@ class ProjectsPage extends StatelessWidget {
                                   detail,
                                   style: GoogleFonts.poppins(
                                     fontSize: 13,
-                                    color: Colors.black87,
+                                    color: Colors.white,
                                   ),
                                 ),
                               ),

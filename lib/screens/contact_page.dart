@@ -9,10 +9,10 @@ import '../widgets/no_scrollbar_behavior.dart';
 class ContactPage extends StatelessWidget {
   const ContactPage({super.key});
 
-  _launchURL(String url) async {
+  launchURL(String url) async {
     final Uri uri = Uri.parse(url);
     if (await canLaunchUrl(uri)) {
-      await launchUrl(uri);
+      await launchUrl(uri, mode: LaunchMode.platformDefault);
     } else {
       throw 'Could not launch $uri';
     }
@@ -33,15 +33,17 @@ class ContactPage extends StatelessWidget {
               style: GoogleFonts.poppins(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
-                color: Colors.black87,
+                color: const Color.fromRGBO(100, 255, 218, 1),
               ),
             ),
             const SizedBox(height: 8),
             Text(
               "I'm currently open to new opportunities. And would love to hear about your projects!",
-              style: GoogleFonts.poppins(color: Colors.grey.shade600),
+              style: GoogleFonts.poppins(
+                color: const Color.fromRGBO(100, 255, 218, 1),
+              ),
             ),
-            const Divider(color: Color(0xFF1434A4), thickness: 2),
+            Divider(color: Colors.grey.shade600, thickness: 1),
             const SizedBox(height: 24),
             _buildContactCard(context, contact),
             const SizedBox(height: 24),
@@ -62,33 +64,39 @@ class ContactPage extends StatelessWidget {
               context,
               icon: Icons.email,
               label: contact["email"],
-              onTap: () => _launchURL("mailto:${contact["email"]}"),
+              onTap: () => launchURL("mailto:${contact["email"]}"),
             ),
-            const Divider(),
+            Divider(color: Colors.grey.shade600, thickness: 1),
             _buildContactItem(
               context,
               icon: Icons.phone,
               label: contact["phone"],
-              onTap: () => _launchURL("tel:${contact["phone"]}"),
+              onTap: () => launchURL("tel:${contact["phone"]}"),
             ),
-            const Divider(),
+            Divider(color: Colors.grey.shade600, thickness: 1),
+
             _buildContactItem(
               context,
               icon: Icons.location_on,
               label: contact["location"],
             ),
-            const Divider(),
+            Divider(color: Colors.grey.shade600, thickness: 1),
+
             _buildContactItem(
               context,
               icon: Icons.calendar_today,
               label: "Born on: ${contact["dob"]}",
             ),
-            const Divider(),
-            _buildContactItem(context,
-                icon: Icons.picture_as_pdf,
-                label: 'view Resume',
-                onTap: () => _launchURL("${contact["resume"]}")),
-            const Divider(),
+            Divider(color: Colors.grey.shade600, thickness: 1),
+
+            _buildContactItem(
+              context,
+              icon: Icons.picture_as_pdf,
+              label: 'view Resume',
+              onTap: () => launchURL("${contact["resume"]}"),
+            ),
+            Divider(color: Colors.grey.shade600, thickness: 1),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -101,7 +109,7 @@ class ContactPage extends StatelessWidget {
                       mini: true,
                       buttonType: ButtonType.linkedin,
                       onTap: () =>
-                          _launchURL(portfolioData["contact"]["linkedin"]),
+                          launchURL(portfolioData["contact"]["linkedin"]),
                     ),
                   ),
                 ),
@@ -115,7 +123,7 @@ class ContactPage extends StatelessWidget {
                       mini: true,
                       buttonType: ButtonType.github,
                       onTap: () =>
-                          _launchURL(portfolioData["contact"]["github"]),
+                          launchURL(portfolioData["contact"]["github"]),
                     ),
                   ),
                 ),
@@ -129,8 +137,18 @@ class ContactPage extends StatelessWidget {
                       iconColor: Colors.redAccent,
                       mini: true,
                       buttonType: ButtonType.email,
-                      onTap: () => _launchURL(
-                          'mailto:${portfolioData["contact"]["email"]}'),
+                      onTap: () async {
+                        final Uri emailUri = Uri(
+                          scheme: 'mailto',
+                          path: portfolioData["contact"]["email"],
+                          queryParameters: {'subject': 'Portfolio Contact'},
+                        );
+
+                        await launchUrl(
+                          emailUri,
+                          mode: LaunchMode.platformDefault,
+                        );
+                      },
                     ),
                   ),
                 ),
@@ -140,33 +158,38 @@ class ContactPage extends StatelessWidget {
                   child: FittedBox(
                     fit: BoxFit.scaleDown,
                     child: IconButton(
-                      icon: const Icon(Icons.download),
-                      onPressed: () => _launchURL('assets/resume.pdf'),
+                      color: Colors.cyanAccent,
+                      icon: const Icon(Icons.phone),
+                      onPressed: () => launchURL("tel:${contact["phone"]}"),
                     ),
                   ),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildContactItem(BuildContext context,
-      {required IconData icon, required String label, VoidCallback? onTap}) {
+  Widget _buildContactItem(
+    BuildContext context, {
+    required IconData icon,
+    required String label,
+    VoidCallback? onTap,
+  }) {
     return InkWell(
       onTap: onTap,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0),
         child: Row(
           children: [
-            Icon(icon, color: Theme.of(context).colorScheme.primary),
+            Icon(icon, color: const Color.fromRGBO(100, 255, 218, 1)),
             const SizedBox(width: 16),
             Expanded(
               child: Text(
                 label,
-                style: GoogleFonts.poppins(color: Colors.black87),
+                style: GoogleFonts.poppins(color: Colors.white),
               ),
             ),
           ],

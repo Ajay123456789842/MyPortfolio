@@ -2,21 +2,21 @@ const Map<String, dynamic> portfolioData = {
   "name": "Naga Ajay Bathula",
   "tagline": "Building engaging, cross-platform apps with Flutter.",
   "professionalSummary":
-      '''Experienced Flutter Developer with over 3 years of hands-on experience building high-performance, cross-platform mobile applications for Android and iOS. Skilled in Dart, Firebase, REST APIs, GraphQL, and modern state management solutions like BLoC, GetX, and Provider.
+      '''Experienced Flutter Developer with over 3 years of hands-on experience building high-performance,cross-platform mobile applications for Android and iOS.Skilled in Dart, Firebase, REST APIs, GraphQL, and modern state management solutions like BLoC, Riverpod,and Provider,And having good Knowledge of java and backend Nodejs.
 
-I’m passionate about clean architecture, intuitive UI/UX, and writing maintainable, scalable code that delivers real business value. I thrive in collaborative, fast-paced teams and enjoy solving complex problems through innovation and attention to detail.
+I am passionate about clean architecture,intuitive UI/UX,and writing maintainable,scalable code that delivers real business value.I thrive in collaborative,fast-paced teams and enjoy solving complex problems through innovation and attention to detail.
 
-Always eager to learn, adapt, and contribute to impactful projects that push the boundaries of mobile technology.''',
+''',
   "contact": {
     "email": "nagaajaybathula@gmail.com",
     "phone": "+919182179784",
     "resume":
         "https://drive.google.com/file/d/1nOAbzxRMIXV6I3sSxsfMI_ef6bBC2CVO/view?usp=drive_link",
-    "linkedin": "https://www.linkedin.com/in/nagaajay/",
+    "linkedin":
+        "https://www.linkedin.com/in/nagaajay?trk=public_profile_browsemap",
     "github": "https://github.com/Ajay123456789842",
-    "youtube": "",
     "location": "Gudivada, Andhra Pradesh, Pin code 521329",
-    "dob": "27th September 1997"
+    "dob": "27th September 1997",
   },
   "skills": {
     "languages": ["Flutter", "Dart", "Node js"],
@@ -24,13 +24,19 @@ Always eager to learn, adapt, and contribute to impactful projects that push the
     "api": ["Rest", "GraphQL"],
     "stateManagement": [
       "Provider",
-      'Riverpod' "BLOC",
+      "BLOC",
       "MVC",
       "MVVM",
-      'Clean Architecture'
+      'Clean Architecture',
     ],
-    "tools": ["Visual Studio Code", "Android Studio", "Xcode", "GitHub"]
+    "tools": ["Visual Studio Code", "Android Studio", "Xcode", "GitHub"],
   },
+  "certifications": [
+    "Oracle PL/SQL certification",
+    "Python Entry level Certification",
+    "Scrum Master-1 Certification",
+    "Flutter and Dart Certification(Maximillan)",
+  ],
   "workExperience": [
     {
       "company": "TATA CONSULTANCY SERVICES",
@@ -40,8 +46,8 @@ Always eager to learn, adapt, and contribute to impactful projects that push the
         "Developed and implemented user-friendly mobile applications using Flutter.",
         "Collaborated with senior developers and designers to integrate UI/UX designs and third-party libraries.",
         "Integrated APIs and services, conducted unit tests, and fixed bugs to ensure app stability and performance.",
-        "Researched and added new features and functionalities to enhance Flutter applications."
-      ]
+        "Researched and added new features and functionalities to enhance Flutter applications.",
+      ],
     },
     {
       "company": "PRIMUS GLOBAL(contractor)",
@@ -51,9 +57,9 @@ Always eager to learn, adapt, and contribute to impactful projects that push the
         "Developed and implemented user-friendly mobile applications using Flutter.",
         "Collaborated with senior developers and designers to integrate UI/UX designs and third-party libraries.",
         "Integrated APIs and services, conducted unit tests, and fixed bugs to ensure app stability and performance.",
-        "Researched and added new features and functionalities to enhance Flutter applications."
-      ]
-    }
+        "Researched and added new features and functionalities to enhance Flutter applications.",
+      ],
+    },
   ],
   "projects": [
     {
@@ -66,7 +72,7 @@ Always eager to learn, adapt, and contribute to impactful projects that push the
         "Used databases like SQLite, Oracle DB, Firebase, Hive to store and retrieve the data.",
         "Used standard state management techniques like Provider and Bloc to increase the efficiency of the app.",
         "Maintained clean code throughout the application.",
-        "Actively participated in regular status meetings."
+        "Actively participated in regular status meetings.",
       ],
     },
     {
@@ -81,7 +87,7 @@ Always eager to learn, adapt, and contribute to impactful projects that push the
         "Implemented standard state management techniques like Provider and Bloc to maintain global state.",
         "Implemented wishlist, cart, and search engine functionalities to enhance user experience.",
         "Implemented push notifications using Cloud Functions to send updates about latest offers and store notifications.",
-        "Followed Agile methodology during application development."
+        "Followed Agile methodology during application development.",
       ],
     },
     {
@@ -94,7 +100,7 @@ Always eager to learn, adapt, and contribute to impactful projects that push the
         "Implemented multilingual support for both Arabic and English.",
         "Used Bloc for state management following Clean Architecture principles.",
         "Regularly participated in client meetings to provide updates based on Figma designs.",
-        "Closely collaborated with SIT and UAT teams for bug resolution."
+        "Closely collaborated with SIT and UAT teams for bug resolution.",
       ],
     },
     {
@@ -108,7 +114,7 @@ Always eager to learn, adapt, and contribute to impactful projects that push the
         "Implemented scripts for testing automation.",
         "Worked with implementation packages for deploying changes in SIT and Production environments.",
         "Prepared test case artifacts for testing and internal reviews.",
-        "Followed Agile methodology and uploaded code to GitHub after every sprint using Git commands."
+        "Followed Agile methodology and uploaded code to GitHub after every sprint using Git commands.",
       ],
     },
   ],
@@ -118,5 +124,5 @@ Always eager to learn, adapt, and contribute to impactful projects that push the
       "degree": "B.Tech in Computer Science",
       "duration": "2016-2020",
     },
-  ]
+  ],
 };

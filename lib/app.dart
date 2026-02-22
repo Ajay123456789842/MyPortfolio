@@ -11,30 +11,36 @@ class PortfolioApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Ajay Bathula',
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
+        scaffoldBackgroundColor: const Color.fromRGBO(8, 32, 50, 1),
         appBarTheme: AppBarTheme(
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black87,
+          backgroundColor: Color.fromRGBO(8, 32, 50, 1),
+          foregroundColor: Colors.white,
           elevation: 0,
           centerTitle: false,
           titleTextStyle: GoogleFonts.poppins(
             fontSize: 24,
             fontWeight: FontWeight.bold,
-            color: Colors.black87,
+            color: Colors.white,
           ),
         ),
         textTheme: TextTheme(
-          bodyLarge: GoogleFonts.poppins(color: Colors.black87),
+          bodyLarge: GoogleFonts.poppins(color: Colors.white),
           bodyMedium: GoogleFonts.poppins(color: Colors.grey.shade600),
           titleLarge: GoogleFonts.poppins(
-              color: Colors.black87, fontWeight: FontWeight.bold),
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
           displayLarge: GoogleFonts.poppins(
-              color: Colors.black87, fontWeight: FontWeight.bold),
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
           headlineLarge: GoogleFonts.poppins(
-              color: Colors.black87, fontWeight: FontWeight.bold),
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         cardTheme: CardThemeData(
-          color: Colors.grey.shade50,
+          color: const Color.fromRGBO(17, 34, 64, 1),
           elevation: 2,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
@@ -47,14 +53,17 @@ class PortfolioApp extends StatelessWidget {
           onSurface: Colors.black87,
         ),
         navigationBarTheme: NavigationBarThemeData(
-          iconTheme: MaterialStateProperty.resolveWith<IconThemeData>((states) {
+          iconTheme: WidgetStateProperty.resolveWith<IconThemeData>((states) {
             if (states.contains(MaterialState.selected)) {
-              return IconThemeData(color: Color(0xFF1434A4));
+              return const IconThemeData(
+                color: Color.fromRGBO(100, 255, 218, 1),
+              );
             }
             return IconThemeData(color: Colors.grey.shade600);
           }),
-          labelTextStyle:
-              MaterialStateProperty.resolveWith<TextStyle>((states) {
+          labelTextStyle: MaterialStateProperty.resolveWith<TextStyle>((
+            states,
+          ) {
             return TextStyle(
               color: states.contains(MaterialState.selected)
                   ? Color(0xFF1434A4)

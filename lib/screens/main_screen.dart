@@ -76,18 +76,14 @@ class _MainScreenState extends State<MainScreen> {
               fontSize: 24,
               fontWeight: FontWeight.bold,
             ),
-            children: [
+            children: const [
               TextSpan(
                 text: 'Naga Ajay',
-                style: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
-                ),
+                style: TextStyle(color: Color.fromRGBO(100, 255, 218, 1)),
               ),
               const TextSpan(
                 text: ' Bathula',
-                style: TextStyle(
-                  color: Colors.black87,
-                ),
+                style: TextStyle(color: Color.fromRGBO(100, 255, 218, 1)),
               ),
             ],
           ),
@@ -107,24 +103,33 @@ class _MainScreenState extends State<MainScreen> {
                         if (index == 2) scrollToSection(projectsKey, 2);
                         if (index == 3) scrollToSection(contactKey, 3);
                       },
-                      child: Wrap(spacing: 4, runSpacing: 8, children: [
-                        Chip(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(16)),
-                          label: Text(
-                            _pageTitles[index],
-                            style: GoogleFonts.poppins(
-                              fontSize: 16,
-                              color: _selectedIndex == index
-                                  ? Theme.of(context).colorScheme.primary
-                                  : Colors.black54,
-                              fontWeight: _selectedIndex == index
-                                  ? FontWeight.bold
-                                  : FontWeight.normal,
+                      child: Wrap(
+                        spacing: 4,
+                        runSpacing: 8,
+                        children: [
+                          Chip(
+                            backgroundColor: Color.fromRGBO(8, 32, 50, 1),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            side: const BorderSide(
+                              color: Color.fromRGBO(100, 255, 218, 1),
+                            ),
+                            label: Text(
+                              _pageTitles[index],
+                              style: GoogleFonts.poppins(
+                                fontSize: 16,
+                                color: _selectedIndex == index
+                                    ? Colors.white
+                                    : const Color.fromRGBO(100, 255, 218, 1),
+                                fontWeight: _selectedIndex == index
+                                    ? FontWeight.bold
+                                    : FontWeight.normal,
+                              ),
                             ),
                           ),
-                        ),
-                      ]),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -151,6 +156,14 @@ class _MainScreenState extends State<MainScreen> {
       ),
       bottomNavigationBar: isMobile
           ? NavigationBar(
+              labelTextStyle: MaterialStateProperty.resolveWith<TextStyle>((
+                states,
+              ) {
+                if (states.contains(MaterialState.selected)) {
+                  return const TextStyle(color: Color(0xFF64FFDA));
+                }
+                return const TextStyle(color: Colors.white);
+              }),
               selectedIndex: _selectedIndex,
               onDestinationSelected: (index) {
                 if (index == 0) scrollToSection(homeKey, 0);
@@ -159,27 +172,42 @@ class _MainScreenState extends State<MainScreen> {
                 if (index == 3) scrollToSection(contactKey, 3);
               },
               height: 70,
-              backgroundColor: Colors.white,
+              backgroundColor: const Color.fromRGBO(8, 32, 50, 1),
               labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
-              destinations: const [
+              destinations: [
                 NavigationDestination(
-                  icon: Icon(Icons.person_outline),
-                  selectedIcon: Icon(Icons.person),
+                  icon: const Icon(
+                    Icons.person_outline,
+                    color: Color.fromRGBO(100, 255, 218, 1),
+                  ),
+                  selectedIcon: Icon(Icons.person, color: Colors.grey.shade600),
                   label: 'About',
                 ),
                 NavigationDestination(
-                  icon: Icon(Icons.work_outline),
-                  selectedIcon: Icon(Icons.work),
-                  label: 'Skills&work exp',
+                  icon: Icon(
+                    Icons.work_outline,
+                    color: Color.fromRGBO(100, 255, 218, 1),
+                  ),
+                  selectedIcon: Icon(Icons.work, color: Colors.grey.shade600),
+                  label: 'Skills',
                 ),
                 NavigationDestination(
-                  icon: Icon(Icons.folder_open),
-                  selectedIcon: Icon(Icons.folder),
+                  icon: Icon(
+                    Icons.folder_open,
+                    color: Color.fromRGBO(100, 255, 218, 1),
+                  ),
+                  selectedIcon: Icon(Icons.folder, color: Colors.grey.shade600),
                   label: 'Projects',
                 ),
                 NavigationDestination(
-                  icon: Icon(Icons.contact_mail_outlined),
-                  selectedIcon: Icon(Icons.contact_mail),
+                  icon: Icon(
+                    Icons.contact_mail_outlined,
+                    color: Color.fromRGBO(100, 255, 218, 1),
+                  ),
+                  selectedIcon: Icon(
+                    Icons.contact_mail,
+                    color: Colors.grey.shade600,
+                  ),
                   label: 'Contact',
                 ),
               ],
