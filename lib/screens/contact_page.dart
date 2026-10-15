@@ -79,13 +79,7 @@ class ContactPage extends StatelessWidget {
               icon: Icons.location_on,
               label: contact["location"],
             ),
-            Divider(color: Colors.grey.shade600, thickness: 1),
 
-            _buildContactItem(
-              context,
-              icon: Icons.calendar_today,
-              label: "Born on: ${contact["dob"]}",
-            ),
             Divider(color: Colors.grey.shade600, thickness: 1),
 
             _buildContactItem(
