@@ -65,7 +65,7 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-    const double mobileBreakpoint = 600;
+    const double mobileBreakpoint = 900;
     final bool isMobile = MediaQuery.of(context).size.width < mobileBreakpoint;
 
     return Scaffold(

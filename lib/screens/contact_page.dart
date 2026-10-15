@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_social_button/flutter_social_button.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -95,6 +94,14 @@ class ContactPage extends StatelessWidget {
               label: 'view Resume',
               onTap: () => launchURL("${contact["resume"]}"),
             ),
+
+            Divider(color: Colors.grey.shade600, thickness: 1),
+            _buildContactItem(
+              context,
+              icon: Icons.import_contacts,
+              label: 'view GitHub',
+              onTap: () => launchURL("${portfolioData["contact"]["github"]}"),
+            ),
             Divider(color: Colors.grey.shade600, thickness: 1),
 
             Row(
@@ -103,53 +110,32 @@ class ContactPage extends StatelessWidget {
                 SizedBox(
                   height: 48,
                   width: 48,
-                  child: FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: FlutterSocialButton(
-                      mini: true,
-                      buttonType: ButtonType.linkedin,
-                      onTap: () =>
-                          launchURL(portfolioData["contact"]["linkedin"]),
-                    ),
+                  child: IconButton(
+                    color: const Color.fromRGBO(100, 255, 218, 1),
+                    icon: const Icon(Icons.business),
+                    onPressed: () =>
+                        launchURL(portfolioData["contact"]["linkedin"]),
                   ),
                 ),
                 const SizedBox(width: 18),
                 SizedBox(
                   height: 48,
                   width: 48,
-                  child: FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: FlutterSocialButton(
-                      mini: true,
-                      buttonType: ButtonType.github,
-                      onTap: () =>
-                          launchURL(portfolioData["contact"]["github"]),
-                    ),
+                  child: IconButton(
+                    color: const Color.fromRGBO(100, 255, 218, 1),
+                    icon: const Icon(Icons.code),
+                    onPressed: () =>
+                        launchURL(portfolioData["contact"]["github"]),
                   ),
                 ),
                 const SizedBox(width: 18),
                 SizedBox(
                   height: 48,
                   width: 48,
-                  child: FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: FlutterSocialButton(
-                      iconColor: Colors.redAccent,
-                      mini: true,
-                      buttonType: ButtonType.email,
-                      onTap: () async {
-                        final Uri emailUri = Uri(
-                          scheme: 'mailto',
-                          path: portfolioData["contact"]["email"],
-                          queryParameters: {'subject': 'Portfolio Contact'},
-                        );
-
-                        await launchUrl(
-                          emailUri,
-                          mode: LaunchMode.platformDefault,
-                        );
-                      },
-                    ),
+                  child: IconButton(
+                    color: Colors.redAccent,
+                    icon: const Icon(Icons.email),
+                    onPressed: () => launchURL("mailto:${contact["email"]}"),
                   ),
                 ),
                 SizedBox(

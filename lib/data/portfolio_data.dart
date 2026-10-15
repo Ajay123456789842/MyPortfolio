@@ -2,16 +2,16 @@ const Map<String, dynamic> portfolioData = {
   "name": "Naga Ajay Bathula",
   "tagline": "Building engaging, cross-platform apps with Flutter.",
   "professionalSummary":
-      '''Experienced Flutter Developer with over 3 years of hands-on experience building high-performance,cross-platform mobile applications for Android and iOS.Skilled in Dart, Firebase, REST APIs, GraphQL, and modern state management solutions like BLoC, Riverpod,and Provider,And having good Knowledge of java and backend Nodejs.
+      '''Experienced Flutter Developer with over 4 years of hands-on experience building high-performance,cross-platform mobile applications for Android,iOS and web.Skilled in Dart, Firebase, REST APIs, and modern state management solutions like BLoC, Riverpod,and Provider,And having good hands on knowledge  of Oracle PlSQL and Generative AI with Python.
 
 I am passionate about clean architecture,intuitive UI/UX,and writing maintainable,scalable code that delivers real business value.I thrive in collaborative,fast-paced teams and enjoy solving complex problems through innovation and attention to detail.
 
 ''',
   "contact": {
-    "email": "nagaajaybathula@gmail.com",
+    "email": "bnagaajay@gmail.com",
     "phone": "+919182179784",
     "resume":
-        "https://drive.google.com/file/d/1nOAbzxRMIXV6I3sSxsfMI_ef6bBC2CVO/view?usp=drive_link",
+        "https://drive.google.com/file/d/1mF-Al3u61YSQ4KAWlByWHYQJr9UaAiPs/view?usp=drive_link",
     "linkedin":
         "https://www.linkedin.com/in/nagaajay?trk=public_profile_browsemap",
     "github": "https://github.com/Ajay123456789842",
@@ -19,7 +19,7 @@ I am passionate about clean architecture,intuitive UI/UX,and writing maintainabl
     "dob": "27th September 1997",
   },
   "skills": {
-    "languages": ["Flutter", "Dart", "Node js"],
+    "languages": ["Flutter", "Dart", "Python", "Generative AI"],
     "databases": ["Hive Database", "SqFlite", 'Firebase', 'oracle PL/SQL'],
     "api": ["Rest", "GraphQL"],
     "stateManagement": [
@@ -36,6 +36,7 @@ I am passionate about clean architecture,intuitive UI/UX,and writing maintainabl
     "Python Entry level Certification",
     "Scrum Master-1 Certification",
     "Flutter and Dart Certification(Maximillan)",
+    "Generative AI Certification using python",
   ],
   "workExperience": [
     {
@@ -76,18 +77,31 @@ I am passionate about clean architecture,intuitive UI/UX,and writing maintainabl
       ],
     },
     {
-      "name": "Godavari Cuts",
+      "name": "Sustainability Framework",
       "description":
-          "This Project mainly focuses on displaying good quality raw material food items like Fish, Prawns, Seafood,countrychicken and mutton. Also to sell them and ship to the customers by validating their respective Zip code.",
-      "imageUrl": "assets/images/godavari_cuts.png",
+          "A sustainability platform that uses quizzes, drives, and challenges to encourage employee participation in eco-friendly practices. Participants earn points for engagement, supporting measurable reductions in carbon emissions and greater adoption of renewable energy.",
+      "imageUrl": "assets/images/sustainability.png",
       "details": [
-        "Used design packages like Google Fonts, and other Flutter packages to provide a visually appealing user interface.",
-        "Used databases like SQLite, Firebase, and Shared Preferences to manage application data.",
-        "Used HTTP and Dio packages for networking.",
-        "Implemented standard state management techniques like Provider and Bloc to maintain global state.",
-        "Implemented wishlist, cart, and search engine functionalities to enhance user experience.",
-        "Implemented push notifications using Cloud Functions to send updates about latest offers and store notifications.",
-        "Followed Agile methodology during application development.",
+        "Coordinated with a two-member team to build the sustainability application.",
+        "Developed engagement features such as quizzes, drives, and sustainability challenges.",
+        "Implemented a points-based reward system for employee participation.",
+        "Encouraged eco-friendly workplace practices and renewable-energy adoption.",
+        "Supported tracking of sustainability outcomes, including carbon-emission reductions.",
+        "Built the application for Android, iOS, and web platforms using Flutter.",
+      ],
+    },
+    {
+      "name": "OSN2 – Vodafone Client (Telecom)",
+      "description":
+          "OSN2 stores and manages fixed-line customer details—including CLI, customer name, address, line type, command, and supporting attributes—required for BT's 999 emergency service. The application receives data from Vodafone provisioning and fulfilment systems.",
+      "imageUrl": "assets/images/vodafone.png",
+      "details": [
+        "Monitored customer data sent from OSN2 to BT for the 999 emergency service.",
+        "Managed and resolved data errors identified within OSN2.",
+        "Supported business-as-usual activities, including monitoring OSN2 transactions.",
+        "Registered new customer numbers in the system.",
+        "Supported administrative functions within the application.",
+        "Worked on a web-based application using Flutter and Oracle PL/SQL.",
       ],
     },
     {
@@ -104,17 +118,17 @@ I am passionate about clean architecture,intuitive UI/UX,and writing maintainabl
       ],
     },
     {
-      "name": "Veedle (Vodafone end to end data linking engine)",
+      "name": "VEEDLE – Vodafone End-to-End Data Linking Engine (Telecom)",
       "description":
-          "This project seeks to use current fixed enterprise provisioning, billing and inventory systems to provide acomprehensive view of all fixed enterprise data.",
+          "VEEDLE integrates fixed-enterprise provisioning, billing, and inventory systems to provide a comprehensive view of enterprise data. It captures customer, service, order, asset, and asset lifecycle details while automating manual activities and reports.",
       "imageUrl": "assets/images/vodafone.png",
       "details": [
-        "Worked on creating stored procedures using Oracle PL/SQL according to the design specifications.",
-        "Created database objects using data warehousing methodologies.",
-        "Implemented scripts for testing automation.",
-        "Worked with implementation packages for deploying changes in SIT and Production environments.",
-        "Prepared test case artifacts for testing and internal reviews.",
-        "Followed Agile methodology and uploaded code to GitHub after every sprint using Git commands.",
+        "Provided an end-to-end view of enterprise customer service inventory.",
+        "Managed customer, service, order, and asset lifecycle information.",
+        "Supported tracking of customer-premises equipment.",
+        "Maintained visibility of Vodafone physical and logical assets.",
+        "Integrated data from provisioning, billing, and inventory systems.",
+        "Automated manual operational activities and reporting processes.",
       ],
     },
   ],

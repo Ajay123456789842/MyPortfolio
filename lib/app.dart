@@ -54,18 +54,15 @@ class PortfolioApp extends StatelessWidget {
         ),
         navigationBarTheme: NavigationBarThemeData(
           iconTheme: WidgetStateProperty.resolveWith<IconThemeData>((states) {
-            if (states.contains(MaterialState.selected)) {
-              return const IconThemeData(
-                color: Color.fromRGBO(100, 255, 218, 1),
-              );
-            }
-            return IconThemeData(color: Colors.grey.shade600);
+            return IconThemeData(
+              color: states.contains(WidgetState.selected)
+                  ? Color(0xFF1434A4)
+                  : Colors.grey.shade600,
+            );
           }),
-          labelTextStyle: MaterialStateProperty.resolveWith<TextStyle>((
-            states,
-          ) {
+          labelTextStyle: WidgetStateProperty.resolveWith<TextStyle>((states) {
             return TextStyle(
-              color: states.contains(MaterialState.selected)
+              color: states.contains(WidgetState.selected)
                   ? Color(0xFF1434A4)
                   : Colors.grey.shade600,
             );
